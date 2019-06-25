@@ -1,0 +1,10 @@
+.modal-wrapper {
+    z-index: 1000;
+}
+
+.modal-wrapper.no-footer-body {
+    .el-dialog__body {
+        padding-bottom: 0 !important;
+        padding-right: 0 !important;
+    }
+}
