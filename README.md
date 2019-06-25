@@ -90,47 +90,178 @@ export default {
     </tr>
 </table>
 
-| Api | Arguments | Description |
-| -------- | 
-| show| options: Object| Show modal by options |
-| setParent| parent: Vue| Set new parent component for subsequent modals. Remark: usefull on programaticaly fullscreen |
-| recoverParent| | Set previos parent component for subsequent modals |
-| closeAll| | Close all modal windows |
-
 ## show options
 
-| Property | Type | Default| Description |
-| -------- | 
-| header| string| '' |Header text of modal window |
-| footer| boolean| true |Header text of modal window |
-| component| Vue-component options | required | Options for create vue-component in modal content |
-| props| Object| null | Data passing to `component`. Remark: if some props is not described in `component` props, this one passed to $attr |
-| height| string| '50vh' |css style for height |
-| buttons| Object| 'Ok'/'Cancel'/Dismiss enable/ESC enable | Options for buttons  |
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>header</td>
+        <td>string</td>
+        <td>''</td>
+        <td>Header text of modal window</td>
+    </tr>
+    <tr>
+        <td>footer</td>
+        <td>boolean</td>
+        <td>true</td>
+        <td>Header text of modal window</td>
+    </tr>
+    <tr>
+        <td>component</td>
+        <td>Vue-component options</td>
+        <td>required</td>
+        <td>Options for create vue-component in modal content</td>
+    </tr>
+    <tr>
+        <td>props</td>
+        <td>Object</td>
+        <td>null</td>
+        <td>Data passing to `component`. Remark: if some props is not described in `component` props, this one passed to $attr</td>
+    </tr>
+    <tr>
+        <td>height</td>
+        <td>string</td>
+        <td>'50vh'</td>
+        <td>css style for height</td>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td>string</td>
+        <td>'50%'</td>
+        <td>css style for width</td>
+    </tr>
+    <tr>
+        <td>buttons</td>
+        <td>Object</td>
+        <td>'Ok'/'Cancel'/Dismiss enable/ESC enable</td>
+        <td>Options for buttons</td>
+    </tr>
+</table>
 
 ## buttons options
 
-| Property | Options | Type | Default| Description |
-| -------- | 
-| 'ok' |  |  | | Options for confirm button |
-|      | label  | string | 'Ok' | Button Text |
-|      | visible  | boolean | true | Is button visible |
-|      | callback  | Function(childResult:Object) | null | Call after susscefuly modal-result|
-| 'cancel' |  |  | | Options for cancel button |
-|      | label  | string | 'Cancel' | Button Text |
-|      | visible  | boolean | true | Is button visible |
-|      | callback  | Function() | null | Call after cancel modal-result|
-| 'dismiss' |  |  | | Options for cancel button |
-|      | visible  | boolean | true | show dismiss button |
-|      | onEsc  | boolean | true | close on ESC |
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Options</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>'ok'</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Options for confirm button</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>label</td>
+        <td>string</td>
+        <td>'Ok'</td>
+        <td>Button Text</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>visible</td>
+        <td>boolean</td>
+        <td>true</td>
+        <td>Is button visible</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>callback</td>
+        <td>Function(childResult:Object)</td>
+        <td>null</td>
+        <td>Call after susscefuly modal-result</td>
+    </tr>
+    <tr>
+        <td>'cancel'</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Options for confirm button</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>label</td>
+        <td>string</td>
+        <td>'Cancel'</td>
+        <td>Button Text</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>visible</td>
+        <td>boolean</td>
+        <td>true</td>
+        <td>Is button visible</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>callback</td>
+        <td>Function()</td>
+        <td>null</td>
+        <td>Call after cancel modal-result</td>
+    </tr>
+    <tr>
+        <td>'dismiss'</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Options for dissmissing</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>visible</td>
+        <td>boolean</td>
+        <td>true</td>
+        <td>show dismiss button</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>onEsc</td>
+        <td>boolean</td>
+        <td>true</td>
+        <td>close on ESC</td>
+    </tr>
+</table>
 
 ## emits from child component
 
-| $emit | Description |
-| -------- | 
-| $emit('modalEvents:onOk', callback) | Call function `callback` on click confirm button. If `callback` result is succesfull this one passing to parent 'ok'.callback and close modal window |
-| $emit('modalEvents:onCancel', callback) | Call function `callback` on click cancel button. If `callback` result is succesfull modal window closes and call 'cancel'.callback|
-| $emit('modalEvents:onDismiss', callback) | Call function `callback` on click dismiss button. If `callback` result is succesfull modal window closes and call 'cancel'.callback|
-| $emit('modalEvents:onEsc', callback) | Call function `callback` on press ESC. If `callback` result is succesfull modal window closes and call 'cancel'.callback|
-| $emit('modalEvents:dispatchOk') | click confirm button |
-| $emit('modalEvents:dispatchCancel') | click cancel button |
+<table>
+    <tr>
+        <th>$emit</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td> $emit('modalEvents:onOk', callback) </td>
+        <td>Call function `callback` on click confirm button. If `callback` result is succesfull this one passing to parent 'ok'.callback and close modal window </td>
+    </tr>
+    <tr>
+        <td>$emit('modalEvents:onCancel', callback)</td>
+        <td>Call function `callback` on click cancel button. If `callback` result is succesfull modal window closes and call 'cancel'.callback</td>
+    </tr>
+    <tr>
+        <td>$emit('modalEvents:onDismiss', callback)</td>
+        <td>Call function `callback` on click dismiss button. If `callback` result is succesfull modal window closes.</td>
+    </tr>
+    <tr>
+        <td>$emit('modalEvents:onEsc', callback) </td>
+        <td>Call function `callback` on press ESC. If `callback` result is succesfull modal window closes</td>
+    </tr>
+    <tr>
+        <td>$emit('modalEvents:dispatchOk')</td>
+        <td>click confirm button </td>
+    </tr>
+    <tr>
+        <td>$emit('modalEvents:dispatchCancel')</td>
+        <td>click cancel button</td>
+    </tr>
+</table>
+
