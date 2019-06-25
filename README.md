@@ -62,6 +62,34 @@ export default {
 
 ## $modals api
 
+<table>
+    <tr>
+        <th>Api</th>
+        <th>Arguments</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>show</td>
+        <td>options: Object</td>
+        <td>Show modal by options</td>
+    </tr>
+    <tr>
+        <td>setParent</td>
+        <td>parent: Vue</td>
+        <td>Set new parent component for subsequent modals. Remark: usefull on programaticaly fullscreen </td>
+    </tr>
+    <tr>
+        <td>recoverParent</td>
+        <td></td>
+        <td>Set previos parent component for subsequent modals</td>
+    </tr>
+    <tr>
+        <td>closeAll</td>
+        <td></td>
+        <td>Close all modal windows</td>
+    </tr>
+</table>
+
 | Api | Arguments | Description |
 | -------- | 
 | show| options: Object| Show modal by options |
